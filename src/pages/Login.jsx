@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import Alerta from "../components/Alerta";
 
-const Registrar = () => {
+const Login = () => {
+  // const navigation = Navigate();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -20,6 +21,7 @@ const Registrar = () => {
     }),
     onSubmit: (values) => {
       console.log(values);
+      // <Navigate to={"/clientes"} />;
     },
   });
 
@@ -27,14 +29,13 @@ const Registrar = () => {
     <main className="flex flex-col md:flex-row md:justify-evenly mt-28 md:h-screen md:mt-0">
       <div className="w-full md:w-1/2 md:my-auto pb-10">
         <p className="text-5xl md:text-6xl xl:text-8xl w-11/12 md:w-9/12 mx-auto">
-          Sé parte de nuestro programa{" "}
-          <span className="colorBase uppercase">Mi Farmacia</span> en tan pocos
-          y simples pasos
+          Continua y verifica tus pasos para ser parte de nuestro programa{" "}
+          <span className="colorBase uppercase">Mi Farmacia</span>
         </p>
       </div>
       <div className="my-auto w-full md:w-1/2">
         <h1 className="text-4xl lg:text-7xl text-center my-2 md:my-8 ">
-          Registrarse
+          Iniciar Sesión
         </h1>
         <form
           onSubmit={formik.handleSubmit}
@@ -75,8 +76,8 @@ const Registrar = () => {
             <Alerta mensaje={formik.errors.password} />
           ) : null}
 
-          <Link to={"/login"} className="colorBase text-sm">
-            <a>¿Ya tienes una cuenta? Inicia Sesión</a>
+          <Link to={"/"} className="colorBase text-sm">
+            <a>¿Aún no tienes cuenta? Registrate aquí</a>
           </Link>
 
           <input
@@ -90,4 +91,4 @@ const Registrar = () => {
   );
 };
 
-export default Registrar;
+export default Login;

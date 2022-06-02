@@ -1,11 +1,10 @@
 import React from "react";
 
 const Alerta = ({ mensaje }) => {
-  console.log(mensaje);
   return (
-    <div>
-      <p className="from-red-700 to-red-500 text-white text-center uppercase w-full">
-        {mensaje}123
+    <div className="grid">
+      <p className="bg-gradient-to-tr from-red-700 to-red-500 text-white text-center uppercase w-full h-auto rounded-xl my-auto mt-2">
+        {mensaje}
       </p>
     </div>
   );
