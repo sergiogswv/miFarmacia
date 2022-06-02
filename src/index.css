@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components{
+    .colorBase{
+        color: #638A21;
+    }
+    .colorInput{
+        background-color: #d9d9d9;
+    }
+    .botonBase{
+        background-color: #8ABD2D;
+    }
+    .botonHover{
+        background-color: #658B20;
+    }
+}
